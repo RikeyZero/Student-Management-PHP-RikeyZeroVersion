@@ -14,6 +14,7 @@ PS:因为深夜work并且My Homie已经眠了所以我直接上传的项目而�
 
 ![](./screenshot/主页.png)
 ![](./screenshot/列表.png)
+![](./screenshot/列表(学生).png)
 ![](./screenshot/个人中心.png)
 ![](./screenshot/修改用户名.png)
 ![](./screenshot/登录.png)

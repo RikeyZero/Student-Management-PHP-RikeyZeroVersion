@@ -2,7 +2,7 @@
 
 一个使用 PHP 实现，功能简单的学生管理系统，刚好够应付课堂作业用。
 
-##项目来源
+## 项目来源
 
 地址:https://github.com/PinkChampagne17/Student-Management-PHP
 

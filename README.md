@@ -113,3 +113,8 @@ CREATE TABLE `studentinfo` (
 
 ## 鸣谢
 - My Homie:Pink Champange17
+
+## 米米想说的话
+- 天马行空的实现方式
+- 复制粘贴高级工程师
+- 一个优秀的摸鱼伙伴

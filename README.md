@@ -1,4 +1,4 @@
-# PHP 学生管理系统
+# PHP 学生管理系统 BY Pink Champange17
 
 一个使用 PHP 实现，功能简单的学生管理系统，刚好够应付课堂作业用。
 
@@ -20,7 +20,19 @@
 - 修改用户名
 - 修改密码
 - 使用 cookie 保持登录状态
-- 对学生的增删查改
+- 使用管理员与学生分开权限
+
+## 管理员功能
+
+- 对学生信息的增删查改
+- 对成绩信息的增删查改
+- 对班级信息的增删查改
+
+## 学生功能
+
+- 查询自己的班级信息
+- 查询自己的成绩信息
+- 查询自己的基本信息
 
 ## 技术栈
 
@@ -40,23 +52,57 @@
 create database student_management;
 use student_management;
 
-CREATE TABLE user (
-   id int auto_increment primary key,
-   uname varchar(20) not null,
-   pwd varchar(20) not null
+CREATE TABLE `manager` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uname` varchar(20) NOT NULL,
+  `pwd` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) default charset=utf8;
+
+CREATE TABLE `studentaccount` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uname` varchar(20) CHARACTER SET utf8 NOT NULL,
+  `pwd` varchar(50) CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`id`)
 )default charset=utf8;
 
-create table student (
-    id int primary key auto_increment,
-    sid int not null,
-    name varchar(15) not null,
-    age int not null,
-    sex enum('男', '女', '其他') not null,
-    uid int not null,
-    FOREIGN KEY(uid) REFERENCES user(id)
+
+CREATE TABLE `classinfo` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `sid` int(20) NOT NULL,
+  `name` varchar(20) CHARACTER SET utf8 NOT NULL,
+  `sc` varchar(20) CHARACTER SET utf8 NOT NULL,
+  `Class` varchar(40) CHARACTER SET utf8 NOT NULL,
+  `uid` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) default charset=utf8;
+
+CREATE TABLE `scoreinfo` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `sid` int(20) NOT NULL,
+  `name` varchar(20) CHARACTER SET utf8 NOT NULL,
+  `sub` varchar(20) CHARACTER SET utf8 DEFAULT '',
+  `score` int(20) DEFAULT NULL,
+  `uid` int(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)default charset=utf8;
+
+CREATE TABLE `studentinfo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sid` int(11) NOT NULL,
+  `name` varchar(15) NOT NULL,
+  `age` int(11) NOT NULL,
+  `sex` enum('男','女','其他') NOT NULL,
+  `uid` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `uid` (`uid`)
 )default charset=utf8;
 ```
 
 ## 可以改善的地方
 
 - SQL 语句的生成是通过简单粗暴地拼接字符串完成的，最开始是为了方便应付作业的人能够快速上手并完成。正确的做法是对 SQL 语句进行预处理，否则会导致 SQL 注入攻击。
+
+## 鸣谢
+My Homie:Pink Champange17

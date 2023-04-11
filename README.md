@@ -112,4 +112,4 @@ CREATE TABLE `studentinfo` (
 - SQL 语句的生成是通过简单粗暴地拼接字符串完成的，最开始是为了方便应付作业的人能够快速上手并完成。正确的做法是对 SQL 语句进行预处理，否则会导致 SQL 注入攻击。
 
 ## 鸣谢
-My Homie:Pink Champange17
+- My Homie:Pink Champange17

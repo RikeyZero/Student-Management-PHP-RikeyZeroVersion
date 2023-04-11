@@ -8,6 +8,8 @@
 
 背景图片来源：https://www.pixiv.net/artworks/59440693
 
+PS:因为深夜work并且My Homie已经眠了所以我直接上传的项目而不是Fork一个因为我的Fork好像有什么问题无法Upload Files。
+
 ## 项目截图预览
 
 ![](./screenshot/主页.png)

@@ -3,7 +3,7 @@
     require 'untils/functions.php';
     
     if (!isset($_COOKIE['id'])) {
-        href('./index.php');
+        href('./classinfo_manager.php');
         return;
     }
     

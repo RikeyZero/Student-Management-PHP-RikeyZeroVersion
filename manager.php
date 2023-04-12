@@ -2,7 +2,7 @@
     require './untils/functions.php';
 
     if (isset($_COOKIE['id'])) {
-        href('./home.php');
+        href('./home_mamager.php');
     }
 ?>
 <!DOCTYPE html>

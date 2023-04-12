@@ -3,7 +3,7 @@
     require 'untils/functions.php';
     
     if (!isset($_COOKIE['id'])) {
-        href('./index.php');
+        href('./classinfo_student.php');
         return;
     }
     
@@ -87,7 +87,7 @@
             </thead>
             <tbody>
                 <?php
-                    $sql = "SELECT id,sid,name,sc,class FROM classinfo where name=(SELECT uname FROM studentaccount where id=$uid)";
+                    $sql = "SELECT id,sid,name,sc,class FROM classinfo where sid=(SELECT sid FROM studentinfo WHERE name=(SELECT uname FROM studentaccount where id=$uid))";
                     
                     if (isset($_POST['search'])) {
                         $s = $_POST['search'];

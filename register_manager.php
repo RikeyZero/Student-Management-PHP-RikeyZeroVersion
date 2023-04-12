@@ -59,7 +59,7 @@
   
   if ($conn->query($sql) === TRUE) {
       alert('注册成功');
-      href('./login.php');
+      href('./index.php');
   }
   else {
       echo "Error: " . $sql . "<br>" . $conn->error;

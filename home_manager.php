@@ -2,7 +2,7 @@
     require 'untils/functions.php';
     
     if (!isset($_COOKIE['id'])) {
-        href('./index.php');
+        href('./home_manager.php');
         return;
     }
     

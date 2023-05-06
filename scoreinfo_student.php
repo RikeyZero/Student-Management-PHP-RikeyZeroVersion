@@ -3,7 +3,7 @@
     require 'untils/functions.php';
     
     if (!isset($_COOKIE['id'])) {
-        href('./scoreinfo_student.php');
+        header('./scoreinfo_student.php');
         return;
     }
     
@@ -87,11 +87,11 @@
             </thead>
             <tbody>
                 <?php
-                    $sql = "SELECT id,sid,name,sub,score FROM scoreinfo where sid=(SELECT sid FROM studentinfo WHERE name=(SELECT uname FROM studentaccount where id=$uid))";
+                    $sql = "SELECT id,sid,name,sub,score FROM scoreinfo where sid=(SELECT sid FROM scoreinfo WHERE name=(SELECT uname FROM studentaccount where id=$uid))";
                     
                     if (isset($_POST['search'])) {
                         $s = $_POST['search'];
-                        $sql = "$sql and (sid='$s' or name like '%$s%' or sub like '%$s% or score = '%$s%' )";
+                        $sql = "$sql and (sid='$s' or name like '%$s%' or sub like '%$s%' or score = '%$s%' )";
                     }
 
                     $result = $conn->query($sql);
@@ -132,10 +132,9 @@
                                 </tr>
                             ";
                         }
+                        die("查询失败：" . $conn->error);
                     }
-                    else {
-                        echo "<tr><td colspan='5'>没有你的信息 或 目前管理员还没有添加你的信息</td></tr>";
-                    }
+        
 
                     $conn->close();
                 ?>

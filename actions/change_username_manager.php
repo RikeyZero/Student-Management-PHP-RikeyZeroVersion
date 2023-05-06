@@ -6,7 +6,7 @@
 
     if ($conn->query($sql) === TRUE) {
         alert('修改成功');
-        href("../user.php");
+        href("../user_manager.php");
     }
     else {
         echo "Error: " . $sql . "<br>" . $conn->error;

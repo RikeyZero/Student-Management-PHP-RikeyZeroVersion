@@ -86,5 +86,5 @@
     require './untils/functions.php';
     
     alert('修改成功');
-    href('./scoreinfo.php');
+    href('./scoreinfo_student.php');
 ?>

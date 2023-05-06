@@ -16,7 +16,7 @@
     $result = $conn->query($sql);
     
     if ($result->num_rows >= 0) {
-        $sql = "UPDATE studentaccount SET pwd='$npwd' WHERE pwd='$pwd' ";
+        $sql = "UPDATE studentaccount SET pwd='$npwd' WHERE pwd='$pwd' AND id={$_COOKIE['id']} ";
     
         if ($conn->query($sql) === TRUE) {
             alert('修改成功');

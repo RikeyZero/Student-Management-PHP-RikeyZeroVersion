@@ -80,11 +80,11 @@
     $age = $_POST['age'];
     $sex = $_POST['sex'];
   
-    $conn->query("update student set sid=$sid, name='$name', age=$age, sex='$sex' where id=$id");
+    $conn->query("update studentinfo set sid=$sid, name='$name', age=$age, sex='$sex' where id=$id");
     $conn->close();
 
     require './untils/functions.php';
     
     alert('修改成功');
-    href('./home.php');
+    href('./home_manager.php');
 ?>

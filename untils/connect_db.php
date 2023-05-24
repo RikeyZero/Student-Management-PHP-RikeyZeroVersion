@@ -1,6 +1,6 @@
 <?php
     // 创建连接
-    $conn = new mysqli("localhost", "root", "", "student_management", 3307);
+    $conn = new mysqli("localhost", "root", "", "student_management", 3306);
 
     $conn->set_charset("utf8");
     

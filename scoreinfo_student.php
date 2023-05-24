@@ -87,7 +87,7 @@
             </thead>
             <tbody>
                 <?php
-                    $sql = "SELECT id,sid,name,sub,score FROM scoreinfo where sid=(SELECT sid FROM scoreinfo WHERE name=(SELECT uname FROM studentaccount where id=$uid))";
+                    $sql = "SELECT id,sid,name,sub,score FROM scoreinfo where sid=(SELECT sid FROM scoreinfo where name=(SELECT uname FROM studentaccount WHERE id=$uid) limit 1)";
                     
                     if (isset($_POST['search'])) {
                         $s = $_POST['search'];
@@ -131,11 +131,11 @@
                                     </td>
                                 </tr>
                             ";
+                            
                         }
-                        die("查询失败：" . $conn->error);
+                        
                     }
-        
-
+                    
                     $conn->close();
                 ?>
               

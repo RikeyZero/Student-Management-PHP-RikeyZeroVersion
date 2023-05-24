@@ -45,19 +45,7 @@
             </div>
         </nav>
 
-        <br>
-
-        <form action="./actions/change_username_student.php" method="POST">
-            <h4>修改用户名</h4>
-            <div class="form-group">
-                <label>新用户名：</label>
-                <input class="form-control" name="uname">
-            </div>
-            <button type="submit" class="btn btn-primary">修改</button>
-        </form>
-
-        <br>
-        <br>
+        
 
         <form action="./actions/change_pwd_student.php" method="POST">
             <h4>修改新密码</h4>

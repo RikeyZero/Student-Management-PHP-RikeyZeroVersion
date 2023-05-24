@@ -86,5 +86,5 @@
     require './untils/functions.php';
     
     alert('修改成功');
-    href('./classinfo.php');
+    href('./classinfo_manager.php');
 ?>
